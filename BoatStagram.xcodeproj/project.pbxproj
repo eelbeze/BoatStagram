@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6857264B63C238433C423B1 /* Pods_BoatStagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4E13B96398C80B104198F8 /* Pods_BoatStagram.framework */; };
 		ADF405121E0AA5AA004D1BF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF405111E0AA5AA004D1BF1 /* AppDelegate.swift */; };
 		ADF405141E0AA5AA004D1BF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF405131E0AA5AA004D1BF1 /* ViewController.swift */; };
 		ADF405171E0AA5AA004D1BF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF405151E0AA5AA004D1BF1 /* Main.storyboard */; };
@@ -26,6 +27,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15811D12B94520C9F0C34E6B /* Pods_BoatStagram_BoatStagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoatStagram_BoatStagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C4E13B96398C80B104198F8 /* Pods_BoatStagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoatStagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25405D73B0F843D6A9D854A9 /* Pods-BoatStagram-BoatStagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoatStagram-BoatStagramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoatStagram-BoatStagramTests/Pods-BoatStagram-BoatStagramTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4438225FAB90334CC19D6F76 /* Pods-BoatStagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoatStagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoatStagram/Pods-BoatStagram.debug.xcconfig"; sourceTree = "<group>"; };
+		9527AED0BA7A58EEDA028A71 /* Pods-BoatStagram-BoatStagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoatStagram-BoatStagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoatStagram-BoatStagramTests/Pods-BoatStagram-BoatStagramTests.release.xcconfig"; sourceTree = "<group>"; };
 		ADF4050E1E0AA5AA004D1BF1 /* BoatStagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoatStagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF405111E0AA5AA004D1BF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADF405131E0AA5AA004D1BF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		ADF405221E0AA5AB004D1BF1 /* BoatStagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoatStagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF405261E0AA5AB004D1BF1 /* BoatStagramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatStagramTests.swift; sourceTree = "<group>"; };
 		ADF405281E0AA5AB004D1BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9B2AE6E5D7EDF85D23520ED /* Pods-BoatStagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoatStagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoatStagram/Pods-BoatStagram.release.xcconfig"; sourceTree = "<group>"; };
+		E4B10677D501A5EA228D588F /* Pods_BoatStagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoatStagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6857264B63C238433C423B1 /* Pods_BoatStagram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +65,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23C73A9A1603EB3CF917171D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25405D73B0F843D6A9D854A9 /* Pods-BoatStagram-BoatStagramTests.debug.xcconfig */,
+				9527AED0BA7A58EEDA028A71 /* Pods-BoatStagram-BoatStagramTests.release.xcconfig */,
+				4438225FAB90334CC19D6F76 /* Pods-BoatStagram.debug.xcconfig */,
+				D9B2AE6E5D7EDF85D23520ED /* Pods-BoatStagram.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ADF405051E0AA5AA004D1BF1 = {
 			isa = PBXGroup;
 			children = (
 				ADF405101E0AA5AA004D1BF1 /* BoatStagram */,
 				ADF405251E0AA5AB004D1BF1 /* BoatStagramTests */,
 				ADF4050F1E0AA5AA004D1BF1 /* Products */,
+				23C73A9A1603EB3CF917171D /* Pods */,
+				FECC3A709DA9F800177A4FDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +118,16 @@
 			path = BoatStagramTests;
 			sourceTree = "<group>";
 		};
+		FECC3A709DA9F800177A4FDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C4E13B96398C80B104198F8 /* Pods_BoatStagram.framework */,
+				E4B10677D501A5EA228D588F /* Pods_BoatStagramTests.framework */,
+				15811D12B94520C9F0C34E6B /* Pods_BoatStagram_BoatStagramTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADF4052B1E0AA5AB004D1BF1 /* Build configuration list for PBXNativeTarget "BoatStagram" */;
 			buildPhases = (
+				266E59F2C8021A198B4B71B6 /* [CP] Check Pods Manifest.lock */,
 				ADF4050A1E0AA5AA004D1BF1 /* Sources */,
 				ADF4050B1E0AA5AA004D1BF1 /* Frameworks */,
 				ADF4050C1E0AA5AA004D1BF1 /* Resources */,
+				B92E67512E4A5D86FF540A12 /* [CP] Embed Pods Frameworks */,
+				19033526187930ED9582DB42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +228,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19033526187930ED9582DB42 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoatStagram/Pods-BoatStagram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		266E59F2C8021A198B4B71B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B92E67512E4A5D86FF540A12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoatStagram/Pods-BoatStagram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ADF4050A1E0AA5AA004D1BF1 /* Sources */ = {
@@ -335,10 +418,14 @@
 		};
 		ADF4052C1E0AA5AB004D1BF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4438225FAB90334CC19D6F76 /* Pods-BoatStagram.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BoatStagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = elbeze.BoatStagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -347,10 +434,14 @@
 		};
 		ADF4052D1E0AA5AB004D1BF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9B2AE6E5D7EDF85D23520ED /* Pods-BoatStagram.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BoatStagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = elbeze.BoatStagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -404,6 +495,7 @@
 				ADF4052D1E0AA5AB004D1BF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADF4052E1E0AA5AB004D1BF1 /* Build configuration list for PBXNativeTarget "BoatStagramTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +504,7 @@
 				ADF405301E0AA5AB004D1BF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
