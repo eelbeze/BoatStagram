@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class BoatTableViewController: UITableViewController, ManagerDelegate {
     
@@ -93,9 +94,9 @@ class BoatTableViewController: UITableViewController, ManagerDelegate {
             
             DispatchQueue.main.sync {
                 self.saveButtonItem.isEnabled = true
+                self.createLocalNotification()
             }
         }
-        
     }
     
     
@@ -109,14 +110,7 @@ class BoatTableViewController: UITableViewController, ManagerDelegate {
     
     // MARK: - Helpers
     func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
-    
-    
-    func getDirectoryPath() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.userDirectory, .userDomainMask, true)
+        let paths = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
         return documentsDirectory
     }
@@ -124,11 +118,23 @@ class BoatTableViewController: UITableViewController, ManagerDelegate {
     func createFolderDownloads() {
         let documentsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
         
-        do {
-            try FileManager.default.createDirectory(atPath: documentsDirectory.path, withIntermediateDirectories: false, attributes: nil)
-        } catch let error as NSError {
-            print("Error creating directory: \(error.localizedDescription)")
-        }
+        try? FileManager.default.createDirectory(atPath: documentsDirectory.path, withIntermediateDirectories: false, attributes: nil)
+       
+    }
+    
+    func createLocalNotification () {
+        let localNotificaiton = UILocalNotification()
+        localNotificaiton.fireDate = NSDate() as Date
+        localNotificaiton.applicationIconBadgeNumber = 1
+        localNotificaiton.soundName = UILocalNotificationDefaultSoundName
+        
+        localNotificaiton.userInfo = [
+            "message": "All images downloaded"
+        ]
+        
+        localNotificaiton.alertBody = "All images downloaded"
+        
+        UIApplication.shared.scheduleLocalNotification(localNotificaiton)
     }
 }
 
