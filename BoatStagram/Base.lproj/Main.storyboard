@@ -58,9 +58,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Owz-JZ-O1x">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xDE-dV-6BW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xDE-dV-6BW">
+                            <connections>
+                                <action selector="saveOnTap:" destination="79N-De-8Eq" id="cse-Z5-2M5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="saveButtonItem" destination="xDE-dV-6BW" id="5D6-8Q-EGa"/>
                         <segue destination="0Ul-Ih-bke" kind="show" identifier="segueIdentifier" id="rjT-03-880"/>
                     </connections>
                 </tableViewController>

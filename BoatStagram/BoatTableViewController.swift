@@ -10,6 +10,7 @@ import UIKit
 
 class BoatTableViewController: UITableViewController, ManagerDelegate {
     
+    @IBOutlet weak var saveButtonItem: UIBarButtonItem!
     var listUrl : [String] = []
     var captations : [String] = []
     var boats : [Boat] = []
@@ -19,7 +20,7 @@ class BoatTableViewController: UITableViewController, ManagerDelegate {
         super.viewDidLoad()
         
         title = "BoatStagram"
-
+        
         let manager : Manager = Manager()
         manager.delegate = self
         manager.executeRequestApi()
@@ -72,6 +73,32 @@ class BoatTableViewController: UITableViewController, ManagerDelegate {
     }
     
     
+    //MARK: - Action
+    @IBAction func saveOnTap(_ sender: Any) {
+        saveButtonItem.isEnabled = false
+        createFolderDownloads()
+        // Save image in document folder
+        DispatchQueue.global(qos: .background).async {
+            for boat in self.boats {
+                if let boatUrl = URL(string: boat.url) {
+                    if let data = try? Data(contentsOf: boatUrl) {
+                        let getImage = UIImage(data: data)
+                        if let data = UIImagePNGRepresentation(getImage!) {
+                            let filename = self.getDocumentsDirectory().appendingPathComponent("\(boat.id).png")
+                            try? data.write(to: filename)
+                        }
+                    }
+                }
+            }
+            
+            DispatchQueue.main.sync {
+                self.saveButtonItem.isEnabled = true
+            }
+        }
+        
+    }
+    
+    
     // MARK: - Send url to ShowImage
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "segueIdentifier") {
@@ -79,4 +106,30 @@ class BoatTableViewController: UITableViewController, ManagerDelegate {
             vc.urlFullImage = urlEnlargedImage
         }
     }
+    
+    // MARK: - Helpers
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    
+    func getDirectoryPath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.userDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    func createFolderDownloads() {
+        let documentsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
+        
+        do {
+            try FileManager.default.createDirectory(atPath: documentsDirectory.path, withIntermediateDirectories: false, attributes: nil)
+        } catch let error as NSError {
+            print("Error creating directory: \(error.localizedDescription)")
+        }
+    }
 }
+
+

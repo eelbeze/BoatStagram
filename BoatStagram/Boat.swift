@@ -12,11 +12,14 @@ class Boat {
     let url: String
     let caption: String
     let urlFullScreen: String
+    let id: String
     
-    init(url: String, caption: String, urlFullScreen: String) {
+    init(url: String, caption: String, urlFullScreen: String, id: String
+        ) {
         self.url = url
         self.caption = caption
         self.urlFullScreen = urlFullScreen
+        self.id = id
     }
     
     init(responseJSON: NSDictionary) {
@@ -24,6 +27,7 @@ class Boat {
         self.caption = reponse["caption"] as! String
         self.url = reponse["thumbnail_src"] as! String
         self.urlFullScreen = reponse["display_src"] as! String
+        self.id = reponse["id"] as! String
     }
 
 }
