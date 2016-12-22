@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Table View Controller-->
+        <!--Boat Table View Controller-->
         <scene sceneID="Rnl-Ne-RJ5">
             <objects>
-                <tableViewController id="79N-De-8Eq" customClass="HomeTableViewController" customModule="BoatStagram" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="79N-De-8Eq" customClass="BoatTableViewController" customModule="BoatStagram" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="281" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rgr-aB-QLM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="281" id="GeN-HY-IoP" customClass="HomeTableViewCell" customModule="BoatStagram" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="281" id="GeN-HY-IoP" customClass="BoatTableViewCell" customModule="BoatStagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="281"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GeN-HY-IoP" id="rag-5Y-mrG">
@@ -60,10 +60,45 @@
                     <navigationItem key="navigationItem" id="Owz-JZ-O1x">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="xDE-dV-6BW"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="0Ul-Ih-bke" kind="show" identifier="segueIdentifier" id="rjT-03-880"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5Y-FA-YlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="784.79999999999995" y="124.58770614692655"/>
+        </scene>
+        <!--Display Boat View Controller-->
+        <scene sceneID="mfz-lE-I3u">
+            <objects>
+                <viewController id="0Ul-Ih-bke" customClass="DisplayBoatViewController" customModule="BoatStagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vzY-vJ-FTE"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Wi-99-IRR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ssn-Aa-EWA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-LS-3nP">
+                                <rect key="frame" x="16" y="198" width="343" height="270"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2oe-LS-3nP" firstAttribute="top" secondItem="vzY-vJ-FTE" secondAttribute="bottom" constant="134" id="5S0-S8-UMP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="2oe-LS-3nP" secondAttribute="leading" id="Uf7-4B-3F8"/>
+                            <constraint firstItem="2oe-LS-3nP" firstAttribute="centerY" secondItem="Ssn-Aa-EWA" secondAttribute="centerY" id="YJq-rb-j94"/>
+                            <constraint firstItem="2oe-LS-3nP" firstAttribute="centerX" secondItem="Ssn-Aa-EWA" secondAttribute="centerX" id="tCa-eR-u8U"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enlargedImage" destination="2oe-LS-3nP" id="JjC-Fu-tbO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sl4-tK-7qI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1536.8" y="124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kkn-zL-eVD">

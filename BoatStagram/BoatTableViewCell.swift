@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+class BoatTableViewCell: UITableViewCell {
     
     @IBOutlet weak var boatImage: UIImageView!
     @IBOutlet weak var caption: UILabel!

@@ -11,16 +11,19 @@ import UIKit
 class Boat {
     let url: String
     let caption: String
+    let urlFullScreen: String
     
-    init(url: String, caption: String) {
+    init(url: String, caption: String, urlFullScreen: String) {
         self.url = url
         self.caption = caption
+        self.urlFullScreen = urlFullScreen
     }
     
     init(responseJSON: NSDictionary) {
-        let tabDico = responseJSON
-        self.caption = tabDico["caption"] as! String
-        self.url = tabDico["thumbnail_src"] as! String
+        let reponse = responseJSON
+        self.caption = reponse["caption"] as! String
+        self.url = reponse["thumbnail_src"] as! String
+        self.urlFullScreen = reponse["display_src"] as! String
     }
 
 }

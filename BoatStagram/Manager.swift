@@ -18,7 +18,7 @@ class Manager: NSObject {
     weak var delegate: ManagerDelegate?
     var url: String?
     
-    func execute () {
+    func executeRequestApi () {
         Alamofire.request("https://www.instagram.com/explore/tags/boat/?__a=1").responseJSON { (response) in
             // Check if it's a sucess
             if response.result.isSuccess {
