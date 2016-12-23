@@ -14,14 +14,6 @@ class Boat {
     let urlFullScreen: String
     let id: String
     
-    init(url: String, caption: String, urlFullScreen: String, id: String
-        ) {
-        self.url = url
-        self.caption = caption
-        self.urlFullScreen = urlFullScreen
-        self.id = id
-    }
-    
     init(responseJSON: NSDictionary) {
         let reponse = responseJSON
         self.caption = reponse["caption"] as! String

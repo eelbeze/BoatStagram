@@ -86,15 +86,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-LS-3nP">
-                                <rect key="frame" x="16" y="198" width="343" height="270"/>
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2oe-LS-3nP" firstAttribute="top" secondItem="vzY-vJ-FTE" secondAttribute="bottom" constant="134" id="5S0-S8-UMP"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="2oe-LS-3nP" secondAttribute="leading" id="Uf7-4B-3F8"/>
-                            <constraint firstItem="2oe-LS-3nP" firstAttribute="centerY" secondItem="Ssn-Aa-EWA" secondAttribute="centerY" id="YJq-rb-j94"/>
-                            <constraint firstItem="2oe-LS-3nP" firstAttribute="centerX" secondItem="Ssn-Aa-EWA" secondAttribute="centerX" id="tCa-eR-u8U"/>
+                            <constraint firstItem="4Wi-99-IRR" firstAttribute="top" secondItem="2oe-LS-3nP" secondAttribute="bottom" id="ICW-3E-qVj"/>
+                            <constraint firstItem="2oe-LS-3nP" firstAttribute="trailing" secondItem="Ssn-Aa-EWA" secondAttribute="trailingMargin" id="bL8-Cq-qSu"/>
+                            <constraint firstItem="2oe-LS-3nP" firstAttribute="leading" secondItem="Ssn-Aa-EWA" secondAttribute="leadingMargin" id="ocf-FD-UUW"/>
+                            <constraint firstItem="2oe-LS-3nP" firstAttribute="top" secondItem="vzY-vJ-FTE" secondAttribute="bottom" id="uW6-hs-a6t"/>
                         </constraints>
                     </view>
                     <connections>

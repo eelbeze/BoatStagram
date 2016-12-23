@@ -7,9 +7,37 @@
 //
 
 import XCTest
+
+
 @testable import BoatStagram
 
+
 class BoatStagramTests: XCTestCase {
+    
+    let boatTableView = BoatTableViewController()
+    let json = [
+        "tag" : [
+            "top_posts": [
+                "nodes": [
+                        [
+                            "caption": "Test description",
+                            "thumbnail_src" : "https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/15624161_720843974733736_5276458247593656320_n.jpg?ig_cache_key=MTQxMTAxMjI2NTkwNjE5OTcxNg%3D%3D.2",
+                            "display_src" : "https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e35/15624161_720843974733736_5276458247593656320_n.jpg?ig_cache_key=MTQxMTAxMjI2NTkwNjE5OTcxNg%3D%3D.2",
+                            "id" : "12"
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    
+    
+    func getDirectoryPath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.downloadsDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+
+
     
     override func setUp() {
         super.setUp()
@@ -20,6 +48,30 @@ class BoatStagramTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+    
+    func testDidReceiveSuccess () {
+        boatTableView.didReceiveSucess(response: json as AnyObject)
+        XCTAssertEqual(boatTableView.boats[0].id, "12")
+        XCTAssertEqual(boatTableView.boats[0].caption, "Test description")
+        XCTAssertEqual(boatTableView.boats[0].url, "https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/15624161_720843974733736_5276458247593656320_n.jpg?ig_cache_key=MTQxMTAxMjI2NTkwNjE5OTcxNg%3D%3D.2")
+        XCTAssertEqual(boatTableView.boats[0].urlFullScreen, "https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/e35/15624161_720843974733736_5276458247593656320_n.jpg?ig_cache_key=MTQxMTAxMjI2NTkwNjE5OTcxNg%3D%3D.2")
+        
+    }
+    
+    func testCreateFolder () {
+        boatTableView.createFolderDownloads()
+        boatTableView.saveImagesIntoDowloadsFolder()
+//        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+//        let url = NSURL(fileURLWithPath: getDirectoryPath())
+//        let filePath = url.appendingPathComponent("12.png")?.path
+//        let fileManager = FileManager.default
+//        if fileManager.fileExists(atPath: filePath!) {
+//            print("FILE AVAILABLE")
+//        } else {
+//            print("FILE NOT AVAILABLE")
+//        }
+    }
+    
     
     func testExample() {
         // This is an example of a functional test case.
