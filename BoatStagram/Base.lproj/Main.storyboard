@@ -17,35 +17,36 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="281" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rgr-aB-QLM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="281" id="GeN-HY-IoP" customClass="BoatTableViewCell" customModule="BoatStagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="281"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GeN-HY-IoP" id="rag-5Y-mrG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="280.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgb-hf-GMd">
-                                            <rect key="frame" x="8" y="246" width="357" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgb-hf-GMd">
+                                            <rect key="frame" x="28" y="246" width="319" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vgk-h5-yxn">
-                                            <rect key="frame" x="8" y="8" width="355" height="228"/>
+                                            <rect key="frame" x="8" y="18" width="359" height="218"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Vgk-h5-yxn" secondAttribute="trailing" constant="12" id="6kZ-dV-TcO"/>
-                                        <constraint firstItem="mgb-hf-GMd" firstAttribute="trailing" secondItem="Vgk-h5-yxn" secondAttribute="trailing" constant="2" id="JSr-96-NDH"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vgk-h5-yxn" secondAttribute="trailing" constant="8" id="6kZ-dV-TcO"/>
+                                        <constraint firstItem="Vgk-h5-yxn" firstAttribute="top" secondItem="rag-5Y-mrG" secondAttribute="topMargin" constant="10" id="Fjt-vm-JWu"/>
                                         <constraint firstItem="mgb-hf-GMd" firstAttribute="top" secondItem="Vgk-h5-yxn" secondAttribute="bottom" constant="10" id="RJP-CP-0BH"/>
-                                        <constraint firstItem="mgb-hf-GMd" firstAttribute="leading" secondItem="Vgk-h5-yxn" secondAttribute="leading" id="Tla-2r-pj1"/>
                                         <constraint firstItem="Vgk-h5-yxn" firstAttribute="leading" secondItem="rag-5Y-mrG" secondAttribute="leading" constant="8" id="d9F-bq-3gB"/>
+                                        <constraint firstItem="mgb-hf-GMd" firstAttribute="leading" secondItem="rag-5Y-mrG" secondAttribute="leadingMargin" constant="20" id="faf-cQ-fJF"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="mgb-hf-GMd" secondAttribute="bottom" constant="5" id="yG9-Pw-6Uy"/>
-                                        <constraint firstAttribute="topMargin" secondItem="Vgk-h5-yxn" secondAttribute="top" id="yxg-ED-BvI"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mgb-hf-GMd" secondAttribute="trailing" constant="20" id="zl3-UK-guG"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="boatImage" destination="Vgk-h5-yxn" id="xbb-vi-pTP"/>
                                     <outlet property="caption" destination="mgb-hf-GMd" id="X46-fC-rZ4"/>
@@ -58,7 +59,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Owz-JZ-O1x">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xDE-dV-6BW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="xDE-dV-6BW">
                             <connections>
                                 <action selector="saveOnTap:" destination="79N-De-8Eq" id="cse-Z5-2M5"/>
                             </connections>
@@ -89,7 +90,7 @@
                                 <rect key="frame" x="16" y="64" width="343" height="603"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4Wi-99-IRR" firstAttribute="top" secondItem="2oe-LS-3nP" secondAttribute="bottom" id="ICW-3E-qVj"/>
                             <constraint firstItem="2oe-LS-3nP" firstAttribute="trailing" secondItem="Ssn-Aa-EWA" secondAttribute="trailingMargin" id="bL8-Cq-qSu"/>
@@ -110,9 +111,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jt0-Bh-FP1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K4D-eu-vn4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="K4D-eu-vn4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

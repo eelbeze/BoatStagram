@@ -47,4 +47,36 @@ class Manager: NSObject {
     }
     
     
+    // MARK: - Dowloads images
+    func createFolderDownloads() {
+        let documentsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
+        
+        try? FileManager.default.createDirectory(atPath: documentsDirectory.path, withIntermediateDirectories: false, attributes: nil)
+    }
+    
+    func writeFile (boats: [Boat]) {
+        for boat in boats {
+            guard let boatUrl = URL(string: boat.urlFullScreen),
+                let data = try? Data(contentsOf: boatUrl)
+                else {
+                    return
+            }
+            
+            let filenameUrl = self.getDocumentsDirectory().appendingPathComponent("\(boat.id).png")
+            // If the file already exist, we didn't save it
+            if(!FileManager.default.fileExists(atPath: filenameUrl.path)) {
+                
+                try? data.write(to: filenameUrl)
+            }
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    
+    
 }

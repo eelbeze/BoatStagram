@@ -102,54 +102,23 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
     
     //MARK: - Action
     @IBAction func saveOnTap(_ sender: Any) {
+        let manager: Manager = Manager()
         saveButtonItem.isEnabled = false
-        createFolderDownloads()
-        // Save image in document folder
-        saveImagesIntoDowloadsFolder()
-    }
-    
-    
-    // MARK: - Helpers
-    func createFolderDownloads() {
-        let documentsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
         
-        try? FileManager.default.createDirectory(atPath: documentsDirectory.path, withIntermediateDirectories: false, attributes: nil)
-    }
-    
-    func saveImagesIntoDowloadsFolder() {
+        // Create dowloads folder
+        manager.createFolderDownloads()
+        
+        // Save image in document folder
         DispatchQueue.global(qos: .background).async {
-            self.writeFile()
+            manager.writeFile(boats: self.boats)
             
             DispatchQueue.main.sync {
-                if self.saveButtonItem != nil {
-                    self.saveButtonItem.isEnabled = true
-                }
+                self.saveButtonItem.isEnabled = true
+                
+                // Then we send notification when the download is finished
                 self.sendLocalNotification()
             }
         }
-    }
-    
-    func writeFile () {
-        for boat in self.boats {
-            guard let boatUrl = URL(string: boat.urlFullScreen),
-                let data = try? Data(contentsOf: boatUrl)
-                else {
-                    return
-            }
-            
-            let filenameUrl = self.getDocumentsDirectory().appendingPathComponent("\(boat.id).png")
-            // If the file already exist, we didn't save it
-            if(!FileManager.default.fileExists(atPath: filenameUrl.path)) {
-                
-                try? data.write(to: filenameUrl)
-            }
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
     }
     
     
