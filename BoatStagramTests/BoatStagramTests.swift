@@ -15,6 +15,8 @@ import XCTest
 class BoatStagramTests: XCTestCase {
     
     let boatTableView = BoatTableViewController()
+    let manager = Manager()
+    
     let json = [
         "tag" : [
             "top_posts": [
@@ -58,20 +60,15 @@ class BoatStagramTests: XCTestCase {
         
     }
     
-    func testCreateFolder () {
-        boatTableView.createFolderDownloads()
-        boatTableView.saveImagesIntoDowloadsFolder()
-//        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-//        let url = NSURL(fileURLWithPath: getDirectoryPath())
-//        let filePath = url.appendingPathComponent("12.png")?.path
-//        let fileManager = FileManager.default
-//        if fileManager.fileExists(atPath: filePath!) {
-//            print("FILE AVAILABLE")
-//        } else {
-//            print("FILE NOT AVAILABLE")
-//        }
+    func testDowloadsImage () {
+        boatTableView.didReceiveSucess(response: json as AnyObject)
+        manager.createFolderDownloads()
+        manager.writeFile(boats: boatTableView.boats)
+        let filenameUrl = manager.getDocumentsDirectory().appendingPathComponent("\(boatTableView.boats[0].id).png")
+        
+        // Verify if the file is dowloads
+        XCTAssertTrue(FileManager.default.fileExists(atPath: filenameUrl.path), "Download sucess")
     }
-    
     
     func testExample() {
         // This is an example of a functional test case.
