@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A6857264B63C238433C423B1 /* Pods_BoatStagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4E13B96398C80B104198F8 /* Pods_BoatStagram.framework */; };
-		AD8BA9DE1E103DFC00E3DB97 /* confused.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8BA9DB1E103DFC00E3DB97 /* confused.png */; };
-		AD8BA9E21E103E6F00E3DB97 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8BA9E11E103E6F00E3DB97 /* happy.png */; };
-		AD8BA9E41E107F6400E3DB97 /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8BA9E31E107F6400E3DB97 /* sad.png */; };
+		AD7BD24A1E108E8600AA97AF /* confused.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7BD2471E108E8600AA97AF /* confused.png */; };
+		AD7BD24B1E108E8600AA97AF /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7BD2481E108E8600AA97AF /* happy.png */; };
+		AD7BD24C1E108E8600AA97AF /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7BD2491E108E8600AA97AF /* sad.png */; };
 		ADAF0BA41E0AAF470099E56E /* BoatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF0BA31E0AAF470099E56E /* BoatTableViewController.swift */; };
 		ADAF0BA61E0AB0870099E56E /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF0BA51E0AB0870099E56E /* Manager.swift */; };
 		ADAF0BA81E0AC97E0099E56E /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF0BA71E0AC97E0099E56E /* Boat.swift */; };
@@ -40,9 +40,9 @@
 		25405D73B0F843D6A9D854A9 /* Pods-BoatStagram-BoatStagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoatStagram-BoatStagramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoatStagram-BoatStagramTests/Pods-BoatStagram-BoatStagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4438225FAB90334CC19D6F76 /* Pods-BoatStagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoatStagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoatStagram/Pods-BoatStagram.debug.xcconfig"; sourceTree = "<group>"; };
 		9527AED0BA7A58EEDA028A71 /* Pods-BoatStagram-BoatStagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoatStagram-BoatStagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoatStagram-BoatStagramTests/Pods-BoatStagram-BoatStagramTests.release.xcconfig"; sourceTree = "<group>"; };
-		AD8BA9DB1E103DFC00E3DB97 /* confused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confused.png; sourceTree = "<group>"; };
-		AD8BA9E11E103E6F00E3DB97 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
-		AD8BA9E31E107F6400E3DB97 /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad.png; sourceTree = "<group>"; };
+		AD7BD2471E108E8600AA97AF /* confused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = confused.png; path = Ressources/confused.png; sourceTree = "<group>"; };
+		AD7BD2481E108E8600AA97AF /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = happy.png; path = Ressources/happy.png; sourceTree = "<group>"; };
+		AD7BD2491E108E8600AA97AF /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sad.png; path = Ressources/sad.png; sourceTree = "<group>"; };
 		ADAF0BA31E0AAF470099E56E /* BoatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatTableViewController.swift; sourceTree = "<group>"; };
 		ADAF0BA51E0AB0870099E56E /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		ADAF0BA71E0AC97E0099E56E /* Boat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
@@ -95,9 +95,9 @@
 		AD8BA9DA1E103D1400E3DB97 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				AD8BA9E31E107F6400E3DB97 /* sad.png */,
-				AD8BA9E11E103E6F00E3DB97 /* happy.png */,
-				AD8BA9DB1E103DFC00E3DB97 /* confused.png */,
+				AD7BD2471E108E8600AA97AF /* confused.png */,
+				AD7BD2481E108E8600AA97AF /* happy.png */,
+				AD7BD2491E108E8600AA97AF /* sad.png */,
 			);
 			name = Ressources;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Elise El beze";
 				TargetAttributes = {
 					ADF4050D1E0AA5AA004D1BF1 = {
@@ -247,11 +247,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD8BA9E41E107F6400E3DB97 /* sad.png in Resources */,
-				AD8BA9E21E103E6F00E3DB97 /* happy.png in Resources */,
-				AD8BA9DE1E103DFC00E3DB97 /* confused.png in Resources */,
+				AD7BD24C1E108E8600AA97AF /* sad.png in Resources */,
 				ADF4051C1E0AA5AA004D1BF1 /* LaunchScreen.storyboard in Resources */,
 				ADF405191E0AA5AA004D1BF1 /* Assets.xcassets in Resources */,
+				AD7BD24A1E108E8600AA97AF /* confused.png in Resources */,
+				AD7BD24B1E108E8600AA97AF /* happy.png in Resources */,
 				ADF405171E0AA5AA004D1BF1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +384,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -433,6 +434,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -461,7 +463,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4438225FAB90334CC19D6F76 /* Pods-BoatStagram.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NHTM26LRB8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -479,7 +481,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9B2AE6E5D7EDF85D23520ED /* Pods-BoatStagram.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NHTM26LRB8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";

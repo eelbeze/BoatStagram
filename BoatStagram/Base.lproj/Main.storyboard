@@ -59,7 +59,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Owz-JZ-O1x">
-                        <barButtonItem key="rightBarButtonItem" image="Dowload" style="plain" id="xDE-dV-6BW">
+                        <barButtonItem key="rightBarButtonItem" image="Dowload" id="xDE-dV-6BW">
                             <connections>
                                 <action selector="saveOnTap:" destination="79N-De-8Eq" id="cse-Z5-2M5"/>
                             </connections>
