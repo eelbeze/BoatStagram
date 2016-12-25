@@ -1,12 +1,17 @@
 # BoatStagram
 
 ## Installation
-if you don't have cocoapods installed in your computer launch this command in your terminal :
+Have cocoapods installed
+If not, you can install it with :  
 ```shell
 # sudo gem install cocoapods
 ```
-Then in your project file, launch 
+Clone the repo in a directory : 
+ ```shell
+ # git clone https://github.com/eelbeze/BoatStagram.git
+```
+In the same directory, use : 
  ```shell
  # pod install 
 ```
-## Test
+It's finished ! Now in order to start the project, use the .xcworkspace file
