@@ -91,7 +91,7 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
     func sendLocalNotification (body: String, ressource: String) {
         // Create content of notification :
         let content = UNMutableNotificationContent()
-        content.title = "Hey !"
+        content.title = "Info"
         content.body = body
         content.sound = UNNotificationSound.default()
         
