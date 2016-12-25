@@ -17,18 +17,19 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
     var captations : [String] = []
     var boats : [Boat] = []
     var urlEnlargedImage: String = ""
+    var uiRefreshControl: UIRefreshControl = UIRefreshControl()
     
-    var downloadTask: URLSessionDownloadTask!
-    var backgroundSession: URLSession!
+    let urlApi = "https://www.instagram.com/explore/tags/boat/?__a=1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "BoatStagram"
         
-        let manager : Manager = Manager()
-        manager.delegate = self
-        manager.executeRequestApi(url: "https://www.instagram.com/explore/tags/boat/?__a=1")
+        uiRefreshControl.addTarget(self, action: #selector(BoatTableViewController.refreshData), for: .valueChanged)
+        self.tableView.addSubview(uiRefreshControl)
+        
+        asyncRequestApi()
     }
     
     
@@ -53,7 +54,6 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
         // We get the url of the larger image
         urlEnlargedImage = boats[indexPath.row].urlFullScreen
         performSegue(withIdentifier: "segueIdentifier", sender: self)
-        
     }
     
     
@@ -68,8 +68,12 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
         
         for node in nodes {
             let boat = Boat(responseJSON: node)
-            boats.append(boat)
+            // If boat already exist, we continue the loop
+            if !boats.contains(where: { $0.id == boat.id }) {
+                boats.append(boat)
+            }
         }
+        
         // Refresh the view
         self.tableView.reloadData()
     }
@@ -96,7 +100,7 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
     // Delegate, display a notif even if the app is in foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Swift.Void) {
         
-        completionHandler([.alert,.sound])
+        completionHandler([.alert])
     }
     
     
@@ -121,6 +125,20 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
         }
     }
     
+    func refreshData () {
+        asyncRequestApi()
+    
+        uiRefreshControl.endRefreshing()
+    }
+    
+    
+    // MARK : - Helper
+    func asyncRequestApi () {
+        let manager = Manager()
+        manager.delegate = self
+        manager.executeRequestApi(url: urlApi)
+    }
+    
     
     // MARK: - Send url to ShowImage
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
@@ -129,5 +147,4 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
             vc.urlFullImage = urlEnlargedImage
         }
     }
-    
 }

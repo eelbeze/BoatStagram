@@ -196,6 +196,7 @@
 				TargetAttributes = {
 					ADF4050D1E0AA5AA004D1BF1 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = NHTM26LRB8;
 						ProvisioningStyle = Automatic;
 					};
 					ADF405211E0AA5AB004D1BF1 = {
@@ -442,6 +443,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NHTM26LRB8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BoatStagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -459,6 +461,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NHTM26LRB8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BoatStagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
