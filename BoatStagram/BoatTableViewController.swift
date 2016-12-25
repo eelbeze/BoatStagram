@@ -9,23 +9,26 @@
 import UIKit
 import UserNotifications
 
+
 class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var saveButtonItem: UIBarButtonItem!
     
-    var listUrl : [String] = []
-    var captations : [String] = []
-    var boats : [Boat] = []
-    var urlEnlargedImage: String = ""
     var uiRefreshControl: UIRefreshControl = UIRefreshControl()
     
     let urlApi = "https://www.instagram.com/explore/tags/boat/?__a=1"
+    
+    var boats : [Boat] = []
+    var urlEnlargedImage: String = ""
+    var idEnlargedImage: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "BoatStagram"
         
+        // Add pull to refresh
         uiRefreshControl.addTarget(self, action: #selector(BoatTableViewController.refreshData), for: .valueChanged)
         self.tableView.addSubview(uiRefreshControl)
         
@@ -53,6 +56,7 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // We get the url of the larger image
         urlEnlargedImage = boats[indexPath.row].urlFullScreen
+        idEnlargedImage = boats[indexPath.row].id
         performSegue(withIdentifier: "segueIdentifier", sender: self)
     }
     
@@ -74,7 +78,7 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
             }
         }
         
-        // Refresh the view
+        // Refresh the Tableview
         self.tableView.reloadData()
     }
     
@@ -83,15 +87,29 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
     }
     
     
-    // MARK: - NOTIFICATION AND DELEGATES
-    func sendLocalNotification () {
+    // MARK: - NOTIFICATION AND DELEGATES NOTIFICATION
+    func sendLocalNotification (body: String, ressource: String) {
         // Create content of notification :
         let content = UNMutableNotificationContent()
         content.title = "Hey !"
-        content.body = "All images downloaded"
+        content.body = body
+        content.sound = UNNotificationSound.default()
         
-        let requestIdentifier = "boatDowloads"
-        let resquest = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: nil)
+        let url = Bundle.main.url(forResource: ressource, withExtension: "png")
+        
+        if let url = url {
+            let attachment = try? UNNotificationAttachment(identifier: "Notification",
+                                                           url: url,
+                                                           options: [:])
+            
+            if let attachment = attachment {
+                content.attachments.append(attachment)
+            } else {
+                print("image cannot attached")
+            }
+        }
+        
+        let resquest = UNNotificationRequest(identifier: "Notification", content: content, trigger: nil)
         UNUserNotificationCenter.current().add(resquest, withCompletionHandler: nil)
         let center = UNUserNotificationCenter.current()
         center.delegate = self
@@ -100,7 +118,7 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
     // Delegate, display a notif even if the app is in foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Swift.Void) {
         
-        completionHandler([.alert])
+        completionHandler([.alert, .sound])
     }
     
     
@@ -114,20 +132,29 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
         
         // Save image in document folder
         DispatchQueue.global(qos: .background).async {
-            manager.writeFile(boats: self.boats)
+            let managerBoatState: ManagerBoatState = manager.writeFile(boats: self.boats)
             
             DispatchQueue.main.sync {
                 self.saveButtonItem.isEnabled = true
                 
                 // Then we send notification when the download is finished
-                self.sendLocalNotification()
+                switch managerBoatState {
+                case .saved:
+                    self.sendLocalNotification(body: "All images downloaded", ressource: "happy")
+                case .unSaved:
+                    self.sendLocalNotification(body: "All images are already downloaded", ressource: "confused")
+                default:
+                    self.sendLocalNotification(body: "Oups, cannot save images", ressource: "sad")
+                    
+                }
+                
             }
         }
     }
     
     func refreshData () {
         asyncRequestApi()
-    
+        
         uiRefreshControl.endRefreshing()
     }
     
@@ -145,6 +172,7 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
         if (segue.identifier == "segueIdentifier") {
             let vc = segue.destination as! DisplayBoatViewController
             vc.urlFullImage = urlEnlargedImage
+            vc.id = idEnlargedImage
         }
     }
 }

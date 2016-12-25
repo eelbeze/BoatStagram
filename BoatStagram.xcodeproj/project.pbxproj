@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A6857264B63C238433C423B1 /* Pods_BoatStagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4E13B96398C80B104198F8 /* Pods_BoatStagram.framework */; };
+		AD8BA9DE1E103DFC00E3DB97 /* confused.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8BA9DB1E103DFC00E3DB97 /* confused.png */; };
+		AD8BA9E21E103E6F00E3DB97 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8BA9E11E103E6F00E3DB97 /* happy.png */; };
+		AD8BA9E41E107F6400E3DB97 /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8BA9E31E107F6400E3DB97 /* sad.png */; };
 		ADAF0BA41E0AAF470099E56E /* BoatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF0BA31E0AAF470099E56E /* BoatTableViewController.swift */; };
 		ADAF0BA61E0AB0870099E56E /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF0BA51E0AB0870099E56E /* Manager.swift */; };
 		ADAF0BA81E0AC97E0099E56E /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF0BA71E0AC97E0099E56E /* Boat.swift */; };
@@ -37,6 +40,9 @@
 		25405D73B0F843D6A9D854A9 /* Pods-BoatStagram-BoatStagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoatStagram-BoatStagramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoatStagram-BoatStagramTests/Pods-BoatStagram-BoatStagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4438225FAB90334CC19D6F76 /* Pods-BoatStagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoatStagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoatStagram/Pods-BoatStagram.debug.xcconfig"; sourceTree = "<group>"; };
 		9527AED0BA7A58EEDA028A71 /* Pods-BoatStagram-BoatStagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoatStagram-BoatStagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoatStagram-BoatStagramTests/Pods-BoatStagram-BoatStagramTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD8BA9DB1E103DFC00E3DB97 /* confused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confused.png; sourceTree = "<group>"; };
+		AD8BA9E11E103E6F00E3DB97 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
+		AD8BA9E31E107F6400E3DB97 /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad.png; sourceTree = "<group>"; };
 		ADAF0BA31E0AAF470099E56E /* BoatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatTableViewController.swift; sourceTree = "<group>"; };
 		ADAF0BA51E0AB0870099E56E /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		ADAF0BA71E0AC97E0099E56E /* Boat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
@@ -86,10 +92,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AD8BA9DA1E103D1400E3DB97 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				AD8BA9E31E107F6400E3DB97 /* sad.png */,
+				AD8BA9E11E103E6F00E3DB97 /* happy.png */,
+				AD8BA9DB1E103DFC00E3DB97 /* confused.png */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
 		ADF405051E0AA5AA004D1BF1 = {
 			isa = PBXGroup;
 			children = (
 				ADF405101E0AA5AA004D1BF1 /* BoatStagram */,
+				AD8BA9DA1E103D1400E3DB97 /* Ressources */,
 				ADF405251E0AA5AB004D1BF1 /* BoatStagramTests */,
 				ADF4050F1E0AA5AA004D1BF1 /* Products */,
 				23C73A9A1603EB3CF917171D /* Pods */,
@@ -230,6 +247,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8BA9E41E107F6400E3DB97 /* sad.png in Resources */,
+				AD8BA9E21E103E6F00E3DB97 /* happy.png in Resources */,
+				AD8BA9DE1E103DFC00E3DB97 /* confused.png in Resources */,
 				ADF4051C1E0AA5AA004D1BF1 /* LaunchScreen.storyboard in Resources */,
 				ADF405191E0AA5AA004D1BF1 /* Assets.xcassets in Resources */,
 				ADF405171E0AA5AA004D1BF1 /* Main.storyboard in Resources */,

@@ -32,18 +32,13 @@ class BoatStagramTests: XCTestCase {
             ]
         ]
     
-    
-    func getDirectoryPath() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.downloadsDirectory, .userDomainMask, true)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
-
 
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        boatTableView.didReceiveSucess(response: json as AnyObject)
+
     }
     
     override func tearDown() {
@@ -52,7 +47,6 @@ class BoatStagramTests: XCTestCase {
     }
     
     func testDidReceiveSuccess () {
-        boatTableView.didReceiveSucess(response: json as AnyObject)
         XCTAssertEqual(boatTableView.boats[0].id, "12")
         XCTAssertEqual(boatTableView.boats[0].caption, "Test description")
         XCTAssertEqual(boatTableView.boats[0].url, "https://scontent-cdg2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/15624161_720843974733736_5276458247593656320_n.jpg?ig_cache_key=MTQxMTAxMjI2NTkwNjE5OTcxNg%3D%3D.2")
@@ -61,20 +55,20 @@ class BoatStagramTests: XCTestCase {
     }
     
     func testDowloadsImage () {
-        boatTableView.didReceiveSucess(response: json as AnyObject)
         manager.createFolderDownloads()
-        manager.writeFile(boats: boatTableView.boats)
+        let _ = manager.writeFile(boats: boatTableView.boats)
         let filenameUrl = manager.getDocumentsDirectory().appendingPathComponent("\(boatTableView.boats[0].id).png")
         
         // Verify if the file is dowloads
         XCTAssertTrue(FileManager.default.fileExists(atPath: filenameUrl.path), "Download sucess")
+        
+        // Test if we get an image
+        let image = manager.getImageWithId(id: boatTableView.boats[0].id)
+        XCTAssertNotNil(image)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
     
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

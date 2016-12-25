@@ -12,12 +12,29 @@ class DisplayBoatViewController: UIViewController {
 
     @IBOutlet weak var enlargedImage: UIImageView!
     var urlFullImage: String? = nil
+    var id: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let urlFullImageNotNil = urlFullImage {
-            enlargedImage.downloadedFrom(urlFullImageNotNil)
+        // We load image if we have saved it
+        if (loadImageDirectory() != nil) {
+            enlargedImage.image = loadImageDirectory()
+        
+        } else {
+            if let urlFullImageNotNil = urlFullImage {
+                enlargedImage.downloadedFrom(urlFullImageNotNil)
+            }
         }
+    }
+    
+    func loadImageDirectory () -> UIImage? {
+        let mananger = Manager()
+        if let idFullUrl = id {
+            
+            return mananger.getImageWithId(id: idFullUrl)
+        }
+        
+        return nil
     }
 }
