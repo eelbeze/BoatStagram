@@ -63,23 +63,24 @@ class BoatTableViewController: UITableViewController, ManagerDelegate, UNUserNot
     
     // MARK: - Manager delegate
     func didReceiveSucess(response json : AnyObject) {
+        // We clean boats :
+        boats.removeAll()
         let response = json as! NSDictionary
         
         // We parsed the json
         let tag = response["tag"] as! NSDictionary
-        let top_post = tag["top_posts"] as! NSDictionary
+        let top_post = tag["media"] as! NSDictionary
         let nodes = top_post["nodes"] as! [NSDictionary]
         
         for node in nodes {
             let boat = Boat(responseJSON: node)
-            // If boat already exist, we continue the loop
-            if !boats.contains(where: { $0.id == boat.id }) {
-                boats.append(boat)
-            }
+            boats.append(boat)
+            
         }
         
         // Refresh the Tableview
         self.tableView.reloadData()
+        
     }
     
     func didReceiveError(error : NSError) {
