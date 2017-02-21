@@ -213,7 +213,7 @@
 				TargetAttributes = {
 					ADF4050D1E0AA5AA004D1BF1 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = NHTM26LRB8;
+						DevelopmentTeam = X28ZDHTUYZ;
 						ProvisioningStyle = Automatic;
 					};
 					ADF405211E0AA5AB004D1BF1 = {
@@ -465,13 +465,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NHTM26LRB8;
+				DEVELOPMENT_TEAM = X28ZDHTUYZ;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BoatStagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = elbeze.BoatStagram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appaloosa.elise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -483,13 +483,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NHTM26LRB8;
+				DEVELOPMENT_TEAM = X28ZDHTUYZ;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BoatStagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = elbeze.BoatStagram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appaloosa.elise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
